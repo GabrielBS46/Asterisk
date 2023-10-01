@@ -7,12 +7,15 @@ if os.getuid() != 0:
     print("Is not root, please user root")
     sys.exit(0)
 
+os.system('sudo yum update mysql-community-release')
+
 pkt = [
     'epel-release',
     'python-pip',
     'vim wget dnf',
     'unixODBC',
-    'mysql-connector-odbc'
+    'mysql-connector-odbc',
+    'mysql-connector-python'
 ]
 docs = [
     'pip3 install alembic ansible',
