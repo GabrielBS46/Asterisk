@@ -40,6 +40,6 @@ for j in docs:
 print("="*50)
 print(f'{"Iniciando Script do Ansible":^50}')
 print("="*50)
-os.system("wget https://github.com/GabrielBS46/Asterisk/raw/main/starfish.yml -o /root/ansible/playbooks starfish.yml")
-os.system('ansible-playbook /root/ansible/playbooks starfish.yml')
+os.system('wget https://github.com/GabrielBS46/Asterisk/raw/main/starfish.yml -O /root/ansible/playbooks/starfish.yml')
+os.system('ansible-playbook /root/ansible/playbooks/starfish.yml')
 os.system('echo "select 1" | isql -v asterisk asterisk password_Asterisk')
