@@ -15,7 +15,8 @@ pkt = [
     'vim wget dnf',
     'unixODBC',
     'mysql-connector-odbc',
-    'mysql-connector-python'
+    'mysql-connector-python',
+    'python3-devel mysql-devel pkgconfig'
 ]
 docs = [
     'pip3 install alembic ansible',
