@@ -7,8 +7,6 @@ if os.getuid() != 0:
     print("Is not root, please user root")
     sys.exit(0)
 
-################ WGETTTTT DO STARFISH
-
 pkt = [
     'epel-release',
     'python-pip',
@@ -39,8 +37,9 @@ for j in docs:
     os.system(j)
     print(f'\033[32mFeito {j}\033[0;0m')
 
-
-
-################ WGETTTTT DO STARFISH
-'ansible-playbook /root/ansible/playbooks starfish.yml'
-###echo "select 1" | isql -v asterisk asterisk password_Asterisk
+print("="*50)
+print(f'{"Iniciando Script do Ansible":^50}')
+print("="*50)
+os.system("wget https://github.com/GabrielBS46/Asterisk/raw/main/starfish.yml -o ansible/starfish.yml")
+os.system('ansible-playbook /root/ansible/playbooks starfish.yml')
+os.system('echo "select 1" | isql -v asterisk asterisk password_Asterisk')
