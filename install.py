@@ -25,7 +25,8 @@ docs = [
     'chown astmin:astmin /etc/ansible',
     'echo "[starfish]" >> /etc/ansible/hosts',
     'echo "localhost ansible_connection=local" >> /etc/ansible/hosts',
-    'mkdir -p ~/ansible/playbooks'
+    'mkdir -p ~/ansible/playbooks',
+    'pip install mysql-connector-python'
     #'touch  ~/ansible/playbooks/starfish.yml'
 
 ]
