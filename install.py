@@ -21,13 +21,14 @@ pkt = [
 docs = [
     'pip3 install alembic ansible',
     'pip3 install --upgrade pip',
+    'pip3 install mysqlclient',
     'mkdir /etc/ansible',
     'useradd astmin',   
     'chown astmin:astmin /etc/ansible',
     'echo "[starfish]" >> /etc/ansible/hosts',
     'echo "localhost ansible_connection=local" >> /etc/ansible/hosts',
     'mkdir -p ~/ansible/playbooks',
-    'pip install mysql-connector-python'
+    'pip3 install mysql-connector-python'
     #'touch  ~/ansible/playbooks/starfish.yml'
 
 ]
