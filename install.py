@@ -19,6 +19,7 @@ pkt = [
     'python3-devel mysql-devel pkgconfig'
 ]
 docs = [
+    'pip3 install ansible',
     'pip3 install alembic ansible',
     'pip3 install --upgrade pip',
     'pip3 install mysqlclient',
@@ -47,5 +48,5 @@ print("="*50)
 print(f'{"Iniciando Script do Ansible":^50}')
 print("="*50)
 os.system('wget https://github.com/GabrielBS46/Asterisk/raw/main/starfish.yml -O /root/ansible/playbooks/starfish.yml')
-os.system('ansible-playbook /root/ansible/playbooks/starfish.yml')
-os.system('echo "select 1" | isql -v asterisk asterisk password_Asterisk')
+#os.system('ansible-playbook /root/ansible/playbooks/starfish.yml')
+#os.system('echo "select 1" | isql -v asterisk asterisk password_Asterisk')
