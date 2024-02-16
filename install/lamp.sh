@@ -8,8 +8,8 @@ sudo systemctl enable mariadb
 sudo mysql_secure_installation <<EOF
 y
 y
-password
-passeord
+$1
+$1
 y
 y
 y
