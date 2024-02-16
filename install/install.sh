@@ -3,6 +3,6 @@
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y git vim nano wget rsync unzip curl
 
-CHAMAR BASHRC
-CHAMAR LAMP
-CHAMAR ASTERISK
+bash vimrc.sh
+bash lamp.sh $1
+bash asterisk.sh
