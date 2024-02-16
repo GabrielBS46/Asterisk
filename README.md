@@ -1,2 +1,2 @@
 # Asterisk
- Creating system with "Asterisk Guia Definitivo"
+ Telephony system using asterisk and bootstrap
