@@ -3,7 +3,7 @@
 if [ -z "$1" ]
 then
   echo Forneça a senha junto ao comando. 
-  echo ./install.sh <password>
+  echo "./install.sh <password>"
   exit 2
 fi
 
