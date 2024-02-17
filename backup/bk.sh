@@ -30,7 +30,21 @@ case $1 in
     backup
   ;;
   -r)
-   echo ainda em testes
+    if [ -z "$2" ]
+     then
+       echo Informe o nome do arquivo de BK.tar.bz2
+       echo "./bk.sh -r <backup.tar.bz2>"
+       exit 2
+     fi
+    tar xjf $2
+    bk=`$2 | sed 's/........$//'`
+    cp -r $bk/asterisk/* /etc/asterisk/
+    chown -R asterisk.asterisk /etc/asterisk
+    cp -r $bk/html* /var/www/html/
+    chown -R www-data.www-data /var/www/html
+    mysqldump -u root -p=$secret asterisk < default/asterisk.sql
+    mysqldump -u root -p=$secret web < default/asterisk.sql
+    rm -rf $bk
   ;;
   -h | --help)
     echo './bk.sh <opcão> <arquivo>'
