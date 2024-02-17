@@ -1,0 +1,483 @@
+<?php
+	if (isset($_GET['cadastro'])){  // dados recebidos de para validar a criação do ramal
+		switch ($_GET['cadastro']) {
+			case "ok": // caso ok mostra o alert success
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<?php 
+		
+	?> 
+	<strong class="d-flex justify-content-center">Ramal <?php echo $_GET['ramal'] ;?> criado com sucesso na base de dados </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados recebidos de verifica_usuario_logado.php
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<?php 
+		
+	?> 
+	<strong class="d-flex justify-content-center">Ramal <?php echo $_GET['ramal'] ;?> Ja exixtente na base de dados. </strong>
+	</div>
+       
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['update'])){  // dados recebidos atualizado com sucesso
+		switch ($_GET['update']) {
+			case "ok": // dados recebidos atualizado com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Ramal "<?php echo $_GET['numero'] ;?>" atualizado com sucesso ! </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados recebidos atualizado com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao Atualizar Ramal <?php echo $$_GET['numero'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['deletado'])){  // dados deletado com sucesso
+		switch ($_GET['deletado']) {
+			case "ok": // dados deletado com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Ramal <?php echo $_GET['numero'] ;?> deletado com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados dados deletado com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao deletar Ramal <?php echo $_GET['numero'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['discagem'])){  // dados regra criada com sucesso
+		switch ($_GET['discagem']) {
+			case "ok": // dados regra criada com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Discagem <?php echo $_GET['regra'] ;?> criada com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao criar a discagem <?php echo $_GET['regra'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['discagem_update'])){  // dados regra criada com sucesso
+		switch ($_GET['discagem_update']) {
+			case "ok": // dados regra criada com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Discagem <?php echo $_GET['regra'] ;?> alterada com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao editar a discagem <?php echo $_GET['regra'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['exten_del'])){  //regra deletada com sucesso
+		switch ($_GET['exten_del']) {
+			case "ok": // regra deletada com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Discagem <?php echo $_GET['exten'] ;?> deletada com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	<div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao deletar a discagem <?php echo $_GET['exten'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['sip_trunk'])){  //regra sip trunk  com sucesso
+		switch ($_GET['sip_trunk']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Discagem Sip Trunk <?php echo $_GET['discagem_out'] ;?> criada com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao criar  a discagem <?php echo $_GET['discagem_out'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['update_trunk'])){  //regra sip trunk  com sucesso
+		switch ($_GET['update_trunk']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Discagem Sip Trunk <?php echo $_GET['numero'] ;?> atualizada com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao deletar a discagem <?php echo $_GET['numero'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['delete_trunk'])){  //regra sip trunk  com sucesso
+		switch ($_GET['delete_trunk']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Discagem Sip Trunk <?php echo $_GET['exten_ip_trunk'] ;?> deletada com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao deletar a discagem <?php echo $_GET['exten_ip_trunk'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+	if (isset($_GET['fila'])){  //regra sip trunk  com sucesso
+		switch ($_GET['fila']) {
+			case "ok": // regra sip trunk  com sucesso
+	?>
+	
+	
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Fila  <?php echo $_GET['piloto'] ;?> criado com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['piloto'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+	
+	?>
+
+	<?php
+	if (isset($_GET['update_fila'])){  //regra sip trunk  com sucesso
+		switch ($_GET['update_fila']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Numero  de fila  <?php echo $_GET['piloto_fila'] ;?> atualizado com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['piloto'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+
+<?php
+	if (isset($_GET['fila_del'])){  //regra sip trunk  com sucesso
+		switch ($_GET['fila_del']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Fila  <?php echo $_GET['fila'] ;?> deletado com sucesso  </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	<strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $_GET['name'] ;?> </strong>
+	</div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['fila_com_ramal'])){  //regra sip trunk  com sucesso
+		switch ($_GET['fila_com_ramal']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Ramal   <?php echo $_GET['ramal_fila'] ;?> vinculado a <?php echo $_GET['fila_select']?></strong>
+	</div>
+	
+    <?php     
+        break;
+       // case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['name'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['ramal_retirado_fila'])){  //regra sip trunk  com sucesso
+		switch ($_GET['ramal_retirado_fila']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Ramal   <?php echo $_GET['ramal_fila'] ;?>  Retirado da fila  <?php echo $_GET['nome_fila']?></strong>
+	</div>
+	
+    <?php     
+        break;
+       // case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['name'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['piloto_da_fila'])){  //regra sip trunk  com sucesso
+		switch ($_GET['piloto_da_fila']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Piloto <?php echo $_GET['numero'] ;?> da fila  <?php echo $_GET['nome_da_fila']?> criado com sucesso </strong>
+	</div>
+	
+    <?php     
+        break;
+       // case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['name'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['piloto_del'])){  //regra sip trunk  com sucesso
+		switch ($_GET['piloto_del']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Numero piloto <?php echo $_GET['piloto_deletado'] ;?> da fila <?php echo $_GET['fila_name']?></strong>
+	</div>
+	
+    <?php     
+	break;
+       // case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['name'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['audio_upload'])){  //regra sip trunk  com sucesso
+		switch ($_GET['audio_upload']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Audio  <?php echo $_GET['arquivo_audio'] ;?> Carregado com sucesso</strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao Carregar o Audio  <?php echo $_GET['arquivo_audio'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['arquivo_deletado'])){  //regra sip trunk  com sucesso
+		switch ($_GET['arquivo_deletado']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Audio  <?php echo $_GET['arquivo_nome'] ;?> excluido com sucesso</strong>
+	</div>
+	
+    <?php     
+        break;
+       // case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['name'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>
+<?php
+	if (isset($_GET['opcoes_ura'])){  //regra sip trunk  com sucesso
+		switch ($_GET['opcoes_ura']) {
+			case "ok": // regra sip trunk  com sucesso
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>	
+	<strong class="d-flex justify-content-center">Opções da URA configuradas com sucesso</strong>
+	</div>
+	
+    <?php     
+        break;
+       // case "fail":  // dados regra criada com sucesso
+    ?>
+	 <div class="alert alert-danger offset-2 w-50 dismissable">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	
+	 <strong class="d-flex justify-content-center">Erro ao criar o  <?php echo $$_GET['name'] ;?> </strong>
+	 </div>
+	        
+    <?php  
+        break;
+        }
+    }
+?>

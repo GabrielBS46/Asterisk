@@ -1,0 +1,52 @@
+	if (isset($_GET['cadastro'])){  // dados recebidos de para validar a criação do Usuário
+		switch ($_GET['cadastro']) {
+			case "ok": // caso ok mostra o alert success
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<strong class="d-flex justify-content-center">Usuário <?php echo $_GET['user'];?> criado com sucesso na base de dados </strong>
+	</div>
+	
+	<?php     
+        break;
+        case "dupli":  // dados recebidos de verifica_usuario_logado.php
+    ?>
+	<div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<strong class="d-flex justify-content-center">Usuário <?php echo $_GET['user'];?> informou senha diferentes </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados recebidos de verifica_usuario_logado.php
+    ?>
+	<div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<strong class="d-flex justify-content-center">Usuário <?php echo $_GET['user'];?> Já exitente na base de dados. </strong>
+	</div>
+    <?php  
+        break;
+        }
+    }
+
+	if (isset($_GET['remocao'])){  // dados recebidos de para validar a remocao do Usuário
+		switch ($_GET['remocao']) {
+			case "ok": // caso ok mostra o alert success
+				?>     
+    <div class="alert alert-success offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<strong class="d-flex justify-content-center">Usuário <?php echo $_GET['user'];?> removido com sucesso </strong>
+	</div>
+	
+    <?php     
+        break;
+        case "fail":  // dados recebidos de verifica_usuario_logado.php
+    ?>
+	<div class="alert alert-danger offset-2 w-50 dismissable">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<strong class="d-flex justify-content-center">Usuário <?php echo $_GET['user'];?> não exite na base de dados </strong>
+	</div>
+    <?php  
+        break;
+        }
+    }
