@@ -3,7 +3,7 @@
 backup(){
   now=$(date +%Y%m%d)
   bkdir=backup/$now
-  secret=$Ac0m1P99
+  secret=$1
 
   mkdir -p $bkdir
 
@@ -17,5 +17,12 @@ backup(){
   tar cjf backup$now.tar.bz2 $bkdir
 }
 
+
+if [ -z "$1" ]
+then
+  echo Forneça a senha junto ao comando. 
+  echo "./bk.sh <password>"
+  exit 2
+fi
 
 backup
