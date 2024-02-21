@@ -2,7 +2,7 @@
 
 sudo apt install -y apache2
 sudo systemctl enable apache2
-sudo apt install -y mariadb-server
+sudo apt install -y mariadb-server odbcinst odbc-mariadb odbc-mdbtools
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
 sudo mysql_secure_installation <<EOF
