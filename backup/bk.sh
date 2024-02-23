@@ -11,6 +11,8 @@ backup(){
   #echo Mysql senha requerida...
   cp -r /var/www/html $bkdir
   cp -r /etc/asterisk $bkdir
+  cp /etc/odbc.ini $bkdir
+  cp /etc/odbcinst.ini $bkdir
   mysqldump -u root -p=$secret asterisk > $bkdir/asterisk.sql
   mysqldump -u root -p=$secret web > $bkdir/web.sql
 
