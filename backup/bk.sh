@@ -19,6 +19,21 @@ backup(){
   tar cjf backup$now.tar.bz2 $bkdir
 }
 
+restaure(){
+  tar xjf $1
+  cd backup/`echo $1 | cut -c 7-14`
+  cp -r asterisk/* /etc/asterisk/
+  chown -R asterisk:asterisk /etc/asterisk
+  cp -r html/* /var/www/html/
+  chown -R www-data:www-data /var/www/html
+  cp odbc.ini /etc/
+  cp odbcinst.ini /etc/
+  mysql -u root -p=$secret asterisk < asterisk.sql
+  mysql -u root -p=$secret web < web.sql
+  cd ../../
+  rm -rf backup
+}
+
 if [ -z "$1" ]
 then
   echo Selecione a opção
@@ -38,15 +53,9 @@ case $1 in
        echo "./bk.sh -r <backup.tar.bz2>"
        exit 2
      fi
-    tar xjf $2
-    bk=`$2 | sed 's/........$//'`
-    cp -r $bk/asterisk/* /etc/asterisk/
-    chown -R asterisk.asterisk /etc/asterisk
-    cp -r $bk/html* /var/www/html/
-    chown -R www-data.www-data /var/www/html
-    mysqldump -u root -p=$secret asterisk < default/asterisk.sql
-    mysqldump -u root -p=$secret web < default/asterisk.sql
-    rm -rf $bk
+    read -s -p "Entre com sua senha do Banco de dados: " secret
+    restaure $2
+
   ;;
   -h | --help)
     echo './bk.sh <opcão> <arquivo>'
@@ -57,4 +66,3 @@ case $1 in
   ;;
 
 esac
-
