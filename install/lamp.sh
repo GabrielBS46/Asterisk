@@ -15,4 +15,4 @@ y
 y
 y
 EOF
-sudo apt install -y php libapache2-mod-php
+sudo apt install -y php libapache2-mod-php php-mysqli
